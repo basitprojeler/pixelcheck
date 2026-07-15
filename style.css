@@ -1,0 +1,187 @@
+/* Modern ve Göze Hoş Gelen Karanlık Tema Tasarımı */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Ana Menü Kartı */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Test Seçenekleri Izgarası (Grid Layout) */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Test Seçim Kartları */
+.card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.15);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: #f8fafc;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Bilgilendirme Kutusu */
+.info-box {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #c7d2fe;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* --- TAM EKRAN TEST ALANI (Varsayılan olarak gizli) --- */
+#test-canvas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Test Esnasındaki Kılavuz Arayüz */
+#test-gui {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ghosting Testi Alanı */
+.ghosting-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Ghosting testi için ideal koyu gri arka plan */
+}
+
+/* UFO satırları */
+.ufo-row {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* UFO Tasarımı (Yeşil/Pembe/Mavi neon kutular) */
+.ufo {
+    width: 50px;
+    height: 30px;
+    background: #00ff00;
+    border-radius: 15px;
+    position: absolute;
+    left: -60px;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Farklı Hızlarda Kayan UFO'ların CSS Animasyonları */
+.ufo-row-1 { top: 25%; }
+.ufo-row-1 .ufo { animation: moveUFO 3s linear infinite; background: #00ff00; box-shadow: 0 0 10px #00ff00; }
+
+.ufo-row-2 { top: 50%; }
+.ufo-row-2 .ufo { animation: moveUFO 1.5s linear infinite; background: #ff00ff; box-shadow: 0 0 10px #ff00ff; }
+
+.ufo-row-3 { top: 75%; }
+.ufo-row-3 .ufo { animation: moveUFO 0.8s linear infinite; background: #00ffff; box-shadow: 0 0 10px #00ffff; }
+
+@keyframes moveUFO {
+    0% { left: -60px; }
+    100% { left: 100vw; }
+}
+
+/* Dikey kılavuz çizgileri */
+.ufo-row::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}

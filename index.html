@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelCheck - Modern Monitör Test Aracı</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+<body>
+
+    <div class="container" id="main-menu">
+        <h1>PixelCheck</h1>
+        <p class="subtitle">Ücretsiz, Reklamsız ve Modern Monitör Test Paketi</p>
+
+        <div class="grid">
+            <div class="card" onclick="startTest('pixel')">
+                <h3>🔴 Ölü Piksel Testi</h3>
+                <p>Ekranınızı sırasıyla ana renklere boyayarak bozuk, takılı kalmış veya tamamen sönmüş pikselleri tespit edin.</p>
+            </div>
+
+            <div class="card" onclick="startTest('leakage')">
+                <h3>⚫ Işık Sızması (IPS Glow)</h3>
+                <p>Siyah ekranda, monitörünüzün kenar panellerinden arka aydınlatma sızıp sızmadığını kontrol edin. (Karanlık odada yapılması önerilir.)</p>
+            </div>
+
+            <div class="card" onclick="startTest('ghosting')">
+                <h3>🛸 Ghosting & Tepki Süresi</h3>
+                <p>Farklı hızlarda hareket eden nesnelerin arkasında bıraktığı gölgeleri görerek panelinizin gecikme süresini test edin.</p>
+            </div>
+
+            <div class="card" style="cursor: default; border-color: rgba(255,255,255,0.05);">
+                <h3>⚙️ Nasıl Kontrol Edilir?</h3>
+                <p>Ölü pikseller genellikle ekranda kalan küçük toz taneleri gibi görünür. Farklı renk testlerinde rengi değişmeyen noktaları inceleyin.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            💡 <strong>İpucu:</strong> Test esnasında tam ekrandan çıkmak için klavyenizden <strong>ESC</strong> tuşuna basabilir veya ekranın herhangi bir yerine sağ tıklayabilirsiniz.
+        </div>
+    </div>
+
+    <div id="test-canvas">
+        <div id="test-gui">Renk değiştirmek için TIKLAYIN. Çıkmak için ESC tuşuna basın.</div>
+        
+        <div class="ghosting-container" id="ghosting-area">
+            <div class="ufo-row ufo-row-1"><div class="ufo"></div></div>
+            <div class="ufo-row ufo-row-2"><div class="ufo"></div></div>
+            <div class="ufo-row ufo-row-3"><div class="ufo"></div></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
