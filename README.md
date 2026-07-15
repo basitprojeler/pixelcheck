@@ -1,4 +1,5 @@
-Pixelcheck, monitördeki, laptoplardaki ıps glow, ölü piksel, ghosting ve tepki süresini online bir şekilde test eden araçtır.
+# PixelCheck - Modern Monitör Test Aracı
 
- Nasıl Kontrol Edilir?
-Ölü pikseller genellikle ekranda kalan küçük toz taneleri gibi görünür. Farklı renk testlerinde rengi değişmeyen noktaları inceleyin.
+Monitörünüzdeki ölü pikselleri, ışık sızmasını (IPS Glow) ve ghosting sorunlarını online olarak, ücretsiz ve reklamsız test edin.
+
+## [Ekranınızı Canlı Test Etmek İçin Buraya Tıklayın!](https://basitprojeler.github.io/pixelcheck/)
